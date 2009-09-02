@@ -1,0 +1,38 @@
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i ! lo -d 127.0.0.0/8 -j REJECT
+
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Public ports
+-A INPUT -p tcp --dport 21 -j ACCEPT
+-A INPUT -p tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp --dport 443 -j ACCEPT
+-A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 3306 -j ACCEPT
+-A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 2049 -j ACCEPT
+-A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 11211 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW --dport CONFIG_SSH_PORT -j ACCEPT
+
+# munin-node
+-A INPUT -p tcp --dport 4949 --source munin.flatsoft.com -j ACCEPT
+
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+
+-A INPUT -j REJECT
+
+-A FORWARD -j REJECT
+-A OUTPUT -j ACCEPT
+
+COMMIT
+
+*nat
+:PREROUTING ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+COMMIT
+

@@ -1,0 +1,12 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+# run-parts
+17 * * * * root run-parts /etc/cron.hourly
+25 6 * * * root run-parts /etc/cron.daily
+47 6 * * 7 root run-parts /etc/cron.weekly
+52 6 1 * * root run-parts /etc/cron.monthly
+* * * * *  root ps ax|grep monit|grep -v grep -q ||service monit restart
+

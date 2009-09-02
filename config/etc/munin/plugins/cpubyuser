@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+# Plugin to monitor CPU usage, for a selected set of users
+#
+# Usage: Place in /etc/munin/node.d/ (or link it there  using ln -s)
+#        Add this to your /etc/munin/plugin-conf.d/munin-node:
+#		[cpubyuser]
+#		env.USERS root yann
+#
+#	 root and yann being a list of the users to monitor.
+#	 You need to also make sure that awk is installed
+#
+# 2008-03-20 v 1.2 fireball:	fixed minor screwup, works now ^^
+#
+# 2008-01-09 v 1.1 fireball:	fixed "-" in usernames, those get replaced by "_" now.
+#				set usernames in config accordingly (that is with _)
+#
+#
+# Parameters understood:
+#
+#       config   (required)
+#       autoconf (optional - used by munin-config)
+#
+
+#%# family=auto
+#%# capabilities=autoconf
+
+
+
+if [ "$1" = "autoconf" ] ; then 
+	if [ -n "$USERS" ] ; then
+  		echo "yes"
+	else
+		echo "\$USERS not defined."
+	fi
+	exit
+fi
+
+if [ "$1" = "config" ] ; then
+	echo "graph_args --base 1000 -r --lower-limit 0";
+	echo "graph_title CPU usage, by user";
+	echo "graph_category system";
+	echo "graph_info This graph shows CPU usage, for monitored users.";
+        echo 'graph_vlabel %'
+        echo 'graph_scale no'
+        echo 'graph_period second'
+	USERS=${USERS/\-/_}
+	echo "graph_order $USERS"
+	
+	FIRSTUSER=1;
+	for USER in $USERS; do	
+		USER=${USER/\-/_}
+		echo "${USER}.label $USER"
+		echo "${USER}.info CPU used by user $USER"
+		echo "${USER}.type GAUGE"
+		if [ $FIRSTUSER -eq 1 ] ; then
+			echo "${USER}.draw AREA"
+			export FIRSTUSER=0;
+		else	
+			echo "${USER}.draw STACK"
+		fi
+	done ;
+	
+	exit
+fi
+
+
+
+for USER in $USERS ; do {
+
+        ps -u $USER -o "%C" |
+	awk -v user="$USER" '
+	BEGIN {
+		FS=" "
+		CPU_USER=0
+	}
+
+	{
+		CPU_USER+=$0
+	}
+
+	END {
+	gsub(/-/,"_", user);
+	print user".value", CPU_USER;
+	}'
+}
+
+done;

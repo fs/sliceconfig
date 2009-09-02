@@ -1,0 +1,42 @@
+#!/bin/bash
+# check apachectl, and if config ok, restart apache
+start() {
+    apachectl -t &> /dev/null
+    if [ $? = 0 ];then
+	/etc/init.d/httpd start
+    else
+	apachectl -t 2>&1 | mail -s "Failed httpd config on `hostname`" CONFIG_ROOT_ADDRESS
+    fi
+
+}
+stop() {
+    apachectl -t &> /dev/null
+    if [ $? = 0 ];then
+	/etc/init.d/httpd stop
+    else
+	apachectl -t 2>&1 | mail -s "Failed httpd config on `hostname`" CONFIG_ROOT_ADDRESS
+    fi
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    restart|force-reload|reload)
+	restart
+	;;
+    status)
+	apachectl -t
+	;;
+    *)
+	echo $"Usage: $0 {start|stop|status|restart|reload|force-reload}"
+	exit 1
+esac

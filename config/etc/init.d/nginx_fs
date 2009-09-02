@@ -1,0 +1,42 @@
+#!/bin/bash
+# check nginx, and if config ok, restart apache
+start() {
+    nginx -t &> /dev/null
+    if [ $? = 0 ];then
+	/etc/init.d/nginx start
+    else
+	nginx -t 2>&1 | mail -s "Failed nginx config on `hostname`" CONFIG_ROOT_ADDRESS
+    fi
+
+}
+stop() {
+    nginx -t &> /dev/null
+    if [ $? = 0 ];then
+	/etc/init.d/nginx stop
+    else
+	nginx -t 2>&1 | mail -s "Failed nginx config on `hostname`" CONFIG_ROOT_ADDRESS
+    fi
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    restart|force-reload|reload)
+	restart
+	;;
+    status)
+	nginx -t
+	;;
+    *)
+	echo $"Usage: $0 {start|stop|status|restart|reload|force-reload}"
+	exit 1
+esac

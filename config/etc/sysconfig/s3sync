@@ -1,0 +1,17 @@
+# File for rdup logging
+LOG_FILE="/var/log/s3sync.log"
+
+# Where file backups store
+FILE_BACKUP_DIR="/var/backups/files"
+
+# Where mysql backups store
+MYSQL_BACKUP_DIR="/var/backups/mysql"
+
+# Directories to back up
+MIRROR_DIR="/var/backups/mirror"
+
+# Prefix for files
+PREFIX="/"
+
+# How old backups may be
+BACKUP_DAYS=7

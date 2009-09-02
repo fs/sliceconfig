@@ -1,0 +1,5 @@
+# File /etc/vsftpd.db used for auth
+
+session	optional pam_keyinit.so force revoke
+auth	required pam_userdb.so db=/etc/vsftpd/users
+account	required pam_userdb.so db=/etc/vsftpd/users

@@ -1,0 +1,36 @@
+check process mongrel-8000 with pidfile /var/www/rails/project/production/shared/pids/mongrel.8000.pid
+        start program = "/usr/bin/mongrel_rails cluster::start -C /etc/rails/mongrel_cluster/project_production.conf --clean --only 8000"
+                as uid rails and gid rails
+
+        stop program = "/usr/bin/mongrel_rails cluster::stop -C /etc/rails/mongrel_cluster/project_production.conf --clean --only 8000"
+
+        if totalmem is greater than 100.0 MB for 5 cycles then restart
+        if cpu is greater than 50% for 2 cycles then alert
+        if cpu is greater than 80% for 3 cycles then restart
+        if loadavg(5min) greater than 10 for 8 cycles then restart
+        if 3 restarts within 5 cycles then timeout
+
+        if failed port 8000 protocol http
+                with timeout 10 seconds
+                then restart
+        group mongrel-project-production
+
+
+
+check process mongrel-8001 with pidfile /var/www/rails/project/production/shared/pids/mongrel.8001.pid
+        start program = "/usr/bin/mongrel_rails cluster::start -C /etc/rails/mongrel_cluster/project_production.conf --clean --only 8001"
+                as uid rails and gid rails
+
+        stop program = "/usr/bin/mongrel_rails cluster::stop -C /etc/rails/mongrel_cluster/project_production.conf --clean --only 8001"
+
+        if totalmem is greater than 100.0 MB for 5 cycles then restart
+        if cpu is greater than 50% for 2 cycles then alert
+        if cpu is greater than 80% for 3 cycles then restart
+        if loadavg(5min) greater than 10 for 8 cycles then restart
+        if 3 restarts within 5 cycles then timeout
+
+        if failed port 8001 protocol http
+                with timeout 10 seconds
+                then restart
+        group mongrel-project-production
+

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ $# -lt 2 ]&&(
+  echo "Usage: $0 group cmd"
+  exit
+)
+grp=$1
+cmd=$2
+
+[ $2 == "update" ]&&cmd="cd /etc/sliceconfig && sudo git pull"
+
+pdsh -R ssh -g $grp "$cmd"|dshbak -c
+

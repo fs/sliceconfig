@@ -1,0 +1,23 @@
+# File with exclude list
+EXCLUDE_FILE="/etc/rdup.exclude.conf"
+
+# File for rdup logging
+LOG_FILE="/var/log/rdup.log"
+
+# Directories to back up
+SOURCE_DIR="/root /home /etc /var"
+
+# Where to store the backup.
+# This can be:
+#  ssh://user@host/directory (note: no colon after the hostname
+#  ssh://host/directory
+#  file:///directory (note: 3 slashes)
+#  /directory
+#  directory
+DESC_DIR="/var/backups/files"
+
+# Where rdup write its internal filelist and timestamp file
+HOME="/var/backups/files"
+
+# How old backups may be
+BACKUP_DAYS=7

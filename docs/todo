@@ -1,0 +1,13 @@
+= TODO
+
+== Base
+* Monit should determine system name from hostname
+
+
+== LAMP
+
+
+== Rails
+* build nginx rpm
+* nginx install & setup scripts
+* monit setup scripts

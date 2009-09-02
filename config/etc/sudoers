@@ -1,0 +1,5 @@
+## Allow root to run any commands anywhere 
+root	ALL=(ALL) 	ALL
+
+## Allows people in group wheel to run all commands without a password
+%wheel	ALL=(ALL)	NOPASSWD: ALL

@@ -1,0 +1,20 @@
+Server: flatsoft-rails.flatsoft.ru
+/etc/httpd/conf.d/passenger.conf
+
+Server: db-master.venturebeat.com
+/etc/sysconfig/memcached
+
+Server: app1.venturebeat.com
+/etc/ssh/sshd_config
+/etc/rkhunter.conf
+
+Server: app2.venturebeat.com
+/etc/ssh/sshd_config
+/etc/rkhunter.conf
+
+
+Server: ywar-stage.pm.flatsourcing.com
+/etc/rkhunter.conf
+
+Server: ywar.pm.flatsourcing.com
+/etc/rkhunter.conf

@@ -1,0 +1,2 @@
+[cpubyuser]
+env.USERS root admin apache rails nginx mysql

@@ -1,0 +1,5 @@
+[mysql*]
+user root
+group wheel
+env.mysqladmin /usr/bin/mysqladmin
+env.mysqlopts --defaults-extra-file=/root/.my.cnf

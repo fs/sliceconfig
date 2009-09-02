@@ -1,0 +1,191 @@
+﻿Slice config: description
+=========================
+
+Overview.
+
+This documents describes settings and installation instructions of
+config and script files for a new SliceHost server.
+
+                 General description of SliceConfig.
+
+Here is a list of server types:
+
+  * base server;
+  * mysql server;
+  * RoR web server;
+  * PHP web server.
+
+Adjustment of each type of a server is based on the general principles
+of configuration. Various kinds of servers are built by addition of
+necessary parts.
+
+The code is located in the following git repo
+git@github.com:fs/sliceconfig.git
+
+SliceConfig contains following folders:
+
+  * config - default config files
+  * install - scripts for installation and adjustment of necessary
+    type of server;
+  * security - scripts to configure access rights to the services and
+    files, adjustment of a security system.
+
+SliceConfig should be located by following path during installation it
+on the server:
+/etc/sliceconfig.
+
+Files without public access (keys, .htpasswd files etc.) should be
+located on the other server in the separate archive .tar.bz2. Access
+to that archive is available through ssh.
+
+The general set of configs.
+
+The directory contains configs which will be applied to services
+customisation on the server.
+
+Installation of configs is carried out using scripts from the
+directory
+install/scripts.
+
+After installation the original configs are renaming in the following
+file name structure: filename-YYYY-MM-DD-HH:MM. If original files from
+delivery sliceconfig are used they should be registered symbolical
+references in the necessary directory. At change of these files, it is
+desirable to remove symlink, and to make a usual copy. Changing these
+files, it is recommended to remove simlink and make an usual copy.
+
+Back up system.
+
+This system is a set of scripts and configs for a backup of files.
+
+Backups are built on following base: rdup, AutoMySQLBackup и
+s3sync:
+
+  * rdup creates hourly backup critical files of system in the
+    directory /var/backups/files
+  * AutoMySQLBackup creates backup of mysql DB in the directory
+    /var/backups/mysql, if mysql stack is installed
+  * s3sync copies data from the following directory
+    /var/backups/mirror to Amazon S3
+
+Monitoring system.
+
+This system is a set of scripts and configs for monitoring of critical
+processes on servers.
+
+Monitoring is built on following base monit.
+
+Monit is tracking the following statistics:
+
+  * a system state (free memory, processor loading)
+  * a state of a file system (free space)
+  * a state of backups(files, mysql, mirroring)
+  * checks performance of servises (nginx/httpd, mysql, crond,
+    sendmail, sshd, syslog)
+
+Notifications sends to the email address - CONFIG_ROOT_ADDRESS in
+the following cases:
+
+  * connection: connection problems with one of the services or
+    connection has been restored
+  * nonexist: one of the process does not work
+  * timeout: error related to request timeout
+  * resource: one of the paramentr of the system has exceeded a limit
+    or has settled into shape
+
+Server checks on presence rootkits
+
+Daily search on a server rootkits using Rootkit Hunter
+
+General root email
+
+All incoming mail of the root user is redirecting to an e-mail
+specified in a variable CONFIG_ROOT_ADDRESS
+
+Cron tasks
+
+Performance time of cron tasks is moved:
+
+  * hourly: at 17 minutes of each hour
+  * daily: at 6:25 every day
+  * weekly: at 6:47 every Sunday
+  * monthly: at 6:52 each first day of month
+
+Localisation
+
+Set up UTF-8 localisation.
+
+Firewall
+
+Only following ports are accessible from outside:
+
+  * From variable CONFIG_SSH_PORT - ssh
+  * 80,443 - http,https
+  * 21 - ftp
+
+SSH
+
+Outside SSH access is available only for admin user. Also it is
+possible to be authorised using the key - admin@tsweb.toa. Set
+CONFIG_ALLOW_ROOT_LOGIN=yes for open access to the root user
+
+SUDO
+
+Admin user can execute all commands without the password.
+
+Admin user
+
+Admin user added for system administration.
+
+Yum
+
+For installation of necessary version of Ruby the following repo was
+added:RubyWorks.
+
+Versions of packets can be locked using yum plugin
+versionlock
+
+                        Installation
+
+  * clone repo with sliceconfig
+    git clone git@github.com:fs/sliceconfig.git
+  * create an archive with private data tree
+
+ etc/
+ etc/s3conf/
+ etc/s3conf/s3config.yml
+ etc/httpd/
+ etc/httpd/conf.d/
+ etc/httpd/conf.d/access.passwd.tpl
+ etc/nginx/
+ etc/nginx/htpasswd
+ home/
+ home/admin/
+ home/admin/.tcshrc
+ home/admin/.bashrc
+ home/admin/.ssh/
+ home/admin/.ssh/authorized_keys
+ home/admin/.ssh/id_rsa
+ home/admin/.ssh/id_rsa.pub
+ home/admin/.ssh/known_hosts
+ root/
+ root/.ssh/
+ root/.ssh/known_hosts
+
+    Not all files are mandatory in /home/admin/.ssh/authorized_keys
+    Need to add key for admin user authorisation
+  * go to directory of installer
+    cd sliceconfig/install
+  * deploy archive with sliceconfig to the server
+    sh upload.sh root@yourserver.com
+  * log in on the server and unpackage sliceconfig
+
+ ssh root@yourserver.com
+ tar xjvf sliceconfig*.tar.bz2 -C /etc
+ cd /etc/sliceconfig/install
+
+  * change variables if it necessary and Important set up file
+    with private data:
+    vim scripts/configuration.sh
+  * run the base stack installation and follow instructions
+    sh install_base.sh

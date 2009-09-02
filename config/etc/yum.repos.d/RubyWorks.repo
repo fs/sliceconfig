@@ -1,0 +1,10 @@
+# Link file for RubyWorks yum repository
+# Place this file in /etc/yum.repos.d 
+
+[rubyworks]
+name=RubyWorks
+baseurl=http://rubyworks.rubyforge.org/redhat/$releasever/RPMS/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=http://rubyworks.rubyforge.org/RubyWorks.GPG.key
+priority=1

@@ -1,0 +1,2 @@
+[apache*]
+env.url http://localhost:8080/server-status?auto
