@@ -1,5 +1,8 @@
                         Installation
 
+  * Installation tested only on Centos 5.2 and 5.3. If you can
+    test in on another distro, please mail us at 
+    sliceconfig@flatsoft.com
   * clone repo with sliceconfig
     git clone git@github.com:fs/sliceconfig.git
   * create an tar.bz2 archive with private data tree
