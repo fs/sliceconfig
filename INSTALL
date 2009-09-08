@@ -1,0 +1,44 @@
+                        Installation
+
+  * clone repo with sliceconfig
+    git clone git@github.com:fs/sliceconfig.git
+  * create an tar.bz2 archive with private data tree
+
+ etc/
+ etc/s3conf/
+ etc/s3conf/s3config.yml
+ etc/httpd/
+ etc/httpd/conf.d/
+ etc/httpd/conf.d/access.passwd.tpl
+ etc/nginx/
+ etc/nginx/htpasswd
+ home/
+ home/admin/
+ home/admin/.tcshrc
+ home/admin/.bashrc
+ home/admin/.ssh/
+ home/admin/.ssh/authorized_keys
+ home/admin/.ssh/id_rsa
+ home/admin/.ssh/id_rsa.pub
+ home/admin/.ssh/known_hosts
+ root/
+ root/.ssh/
+ root/.ssh/known_hosts
+
+    Not all files are mandatory. In /home/admin/.ssh/authorized_keys
+    need to add key for admin user authorisation
+  * go to directory of installer
+    cd sliceconfig/install
+  * deploy archive with sliceconfig to the server
+    sh upload.sh root@yourserver.com
+  * log in on the server and unpackage sliceconfig
+
+ ssh root@yourserver.com
+ tar xjvf sliceconfig*.tar.bz2 -C /etc
+ cd /etc/sliceconfig/install
+
+  * change variables if it necessary and Important set up file
+    with private data:
+    vim scripts/configuration.sh
+  * run the base stack installation and follow instructions
+    sh install_base.sh

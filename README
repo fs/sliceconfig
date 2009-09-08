@@ -172,8 +172,8 @@ versionlock
  root/.ssh/
  root/.ssh/known_hosts
 
-    Not all files are mandatory in /home/admin/.ssh/authorized_keys
-    Need to add key for admin user authorisation
+    Not all files are mandatory. In /home/admin/.ssh/authorized_keys
+    need to add key for admin user authorisation
   * go to directory of installer
     cd sliceconfig/install
   * deploy archive with sliceconfig to the server

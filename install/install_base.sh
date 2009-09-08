@@ -5,6 +5,9 @@
 sliceconfig=`dirname $0`/..
 sliceconfig=`readlink -f $sliceconfig`
 
+# clean yum database
+yum clean all
+
 # copy private files from another host
 sh $sliceconfig/security/scripts/copy_private_files.sh
 
