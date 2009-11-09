@@ -5,5 +5,5 @@
 # include config
 . `dirname $0`/configuration.sh
 
-gem install --ignore-dependencies --no-rdoc --no-ri --no-update-sources -q $sliceconfig/install/files/passenger-2.2.3.gem
+gem install --ignore-dependencies --no-rdoc --no-ri --no-update-sources -q $sliceconfig/install/files/passenger-2.2.5.gem
 passenger-install-apache2-module

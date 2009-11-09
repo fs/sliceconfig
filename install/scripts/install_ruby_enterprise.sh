@@ -14,10 +14,10 @@ yum -y -d1 install zlib-devel.x86_64 openssl-devel.x86_64 readline-devel.x86_64
 
 
 # install ruby ent
-tar xzf $sliceconfig/install/files/ruby-enterprise-1.8.6-20090610.tar.gz -C /tmp
-cd /tmp/ruby-enterprise-1.8.6-20090610
-sh ./installer --auto /opt/ruby-enterprise-1.8.6-20090610
-rm -rf /tmp/ruby-enterprise-1.8.6-20090610
+tar xzf $sliceconfig/install/files/ruby-enterprise-1.8.7-2009.10.tar.gz -C /tmp
+cd /tmp/ruby-enterprise-1.8.7-2009.10
+sh ./installer --auto /opt/ruby-enterprise-1.8.7-2009.10
+rm -rf /tmp/ruby-enterprise-1.8.7-2009.10
 
 # erase ruby
 yum -y erase ruby.x86_64 ruby-libs.x86_64
@@ -28,7 +28,7 @@ yum -y erase ruby.x86_64 ruby-libs.x86_64
 
 
 # symlink ruby
-copy_file /opt/ruby-enterprise-1.8.6-20090610/bin/ruby /usr/bin/ruby link
-copy_file /opt/ruby-enterprise-1.8.6-20090610/bin/gem /usr/bin/gem link
-copy_file /opt/ruby-enterprise-1.8.6-20090610/bin/s3cmd /usr/bin/s3cmd link
-copy_file /opt/ruby-enterprise-1.8.6-20090610/bin/s3sync /usr/bin/s3sync link
+copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/ruby /usr/bin/ruby link
+copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/gem /usr/bin/gem link
+copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/s3cmd /usr/bin/s3cmd link
+copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/s3sync /usr/bin/s3sync link
