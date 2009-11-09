@@ -34,11 +34,11 @@ function copy_file()
 	    #check for symlink
 	    if [ -L "$dest_file" ]; then
 		#symlink. unlink, move and delete it
-		cp -L "$dest_file" "$dest_file.`date +%Y-%m-%d-%k:%M`"
+		cp -L "$dest_file" "$dest_file.`date +%Y-%m-%d-%H:%M`"
 		rm -f "$dest_file"
 	    else
 		#normal file
-		mv -f "$dest_file" "$dest_file.`date +%Y-%m-%d-%k:%M`"
+		mv -f "$dest_file" "$dest_file.`date +%Y-%m-%d-%H:%M`"
 	    fi
 	fi
     fi
