@@ -33,6 +33,10 @@ copy_file $sliceconfig/config/home/admin/.ssh/known_hosts /home/admin/.ssh/known
 # copy keys
 copy_file $sliceconfig/config/home/admin/.ssh/id_rsa /home/admin/.ssh/id_rsa copy
 copy_file $sliceconfig/config/home/admin/.ssh/id_rsa.pub /home/admin/.ssh/id_rsa.pub copy
+copy_file $sliceconfig/config/home/admin/.bashrc /home/admin/.bashrc
+copy_file $sliceconfig/config/home/admin/.bash_profile /home/admin/.bash_profile
+copy_file $sliceconfig/config/home/admin/.tcshrc /home/admin/.tcshrc
+copy_file $sliceconfig/config/home/admin/.tcsh_screenrc /home/admin/.tcsh_screenrc
 
 
 # setup valid perms

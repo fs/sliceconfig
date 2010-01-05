@@ -16,6 +16,11 @@ if [ -e /etc/httpd/conf.d/proxy_ajp.conf ]; then
   mv /etc/httpd/conf.d/proxy_ajp.conf /etc/httpd/conf.d/proxy_ajp.off
 fi
 
+# make mod_rpaf
+tar xzvf $sliceconfig/install/files/mod_rpaf-0.6.tar.gz -C /tmp
+cd /tmp/mod_rpaf-0.6
+make && make install
+rm -rf /tmp/mod_rpaf-0.6
 
 # link vhosts structure
 copy_file $sliceconfig/config/etc/httpd/conf.d/vhosts/* /etc/httpd/conf.d/vhosts/ link
