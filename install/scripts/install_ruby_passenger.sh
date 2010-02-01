@@ -7,3 +7,4 @@
 
 gem install --ignore-dependencies --no-rdoc --no-ri --no-update-sources -q $sliceconfig/install/files/passenger-2.2.5.gem
 passenger-install-apache2-module
+ln -s /opt/ruby-enterprise-1.8.7-2009.10/ /opt/ree
