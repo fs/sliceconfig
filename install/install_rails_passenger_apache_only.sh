@@ -7,7 +7,6 @@ sliceconfig=`readlink -f $sliceconfig`
 
 
 sh $sliceconfig/install/scripts/setup_httpd_passenger.sh 80
-exit
 
 # install required software
 sh $sliceconfig/install/scripts/install_httpd.sh

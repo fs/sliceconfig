@@ -7,15 +7,13 @@ sliceconfig=`readlink -f $sliceconfig`
 
 
 # install required software
-sh $sliceconfig/install/scripts/install_nginx.sh
-sh $sliceconfig/install/scripts/install_ruby_passenger_nginx.sh
-
+sh $sliceconfig/install/scripts/install_nginx_passenger.sh
 
 # user configurations
 sh $sliceconfig/install/scripts/setup_users_rails.sh
 
 # nginx  configuration
-sh $sliceconfig/install/scripts/setup_nginx.sh
+sh $sliceconfig/install/scripts/setup_nginx_passenger.sh
 
 # ssl configuration
 sh $sliceconfig/install/scripts/setup_nginx_ca.sh

@@ -8,7 +8,6 @@
 
 # link config
 copy_file $sliceconfig/config/etc/monit.d/httpd.conf /etc/monit.d/httpd.conf link
-copy_file $sliceconfig/config/etc/init.d/httpd_fs /etc/init.d/httpd_fs copy
 
 
 # reload monit
