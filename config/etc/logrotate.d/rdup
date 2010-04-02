@@ -1,0 +1,8 @@
+/var/log/rdup.log {
+    daily
+    rotate 4
+    missingok
+    notifempty
+    compress
+    sharedscripts
+}
