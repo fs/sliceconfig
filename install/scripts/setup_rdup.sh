@@ -22,6 +22,7 @@ copy_file $sliceconfig/config/etc/sysconfig/rdup /etc/sysconfig/rdup link
 # link script
 copy_file $sliceconfig/config/etc/cron.hourly/rdup.sh /etc/cron.hourly/rdup.sh link
 
+copy_file $sliceconfig/config/etc/logrotate.d/rdup /etc/logrotate.d/rdup link
 
 # restart service
 service crond reload
