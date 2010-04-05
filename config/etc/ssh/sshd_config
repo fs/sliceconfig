@@ -76,3 +76,5 @@ UsePAM no
 UseDNS no
 
 AllowUsers admin
+
+Subsystem       sftp    /usr/libexec/openssh/sftp-server
