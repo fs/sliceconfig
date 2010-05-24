@@ -8,8 +8,8 @@ def config
   db_user = ARGV[2] || "prj_#{ARGV[0]}"
   db_password = ARGV[3] || `apg -n 1 -a 0 -d`
 
-  puts `mysql -u root -e "CREATE DATABASE IF NOT EXISTS #{db_name}"`
-  puts `mysql -u root -e "GRANT ALL ON #{db_name}.* to \'#{db_user}\'@\'#{db_host}\' IDENTIFIED BY \'#{db_password}\'"`
+  puts `mysql -e "CREATE DATABASE IF NOT EXISTS #{db_name}"`
+  puts `mysql -e "GRANT ALL ON #{db_name}.* to \'#{db_user}\'@\'#{db_host}\' IDENTIFIED BY \'#{db_password}\'"`
 
   puts "Database: #{db_name}"
   puts "Host: #{db_host}"  
