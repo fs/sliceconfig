@@ -5,7 +5,7 @@ def config
 
   db_name = ARGV[0]
   db_host = ARGV[1] || 'localhost'  
-  db_user = ARGV[2] || "prj_#{ARGV[0]}"
+  db_user = ARGV[2] || "prj_#{ARGV[0].gsub(/_(development|dev|staging|stage|production|prod)/, '')}"
   db_password = ARGV[3] || `apg -n 1 -a 0 -d`
 
   puts `mysql -e "CREATE DATABASE IF NOT EXISTS #{db_name}"`
