@@ -7,7 +7,7 @@
 
 
 # copy config
-copy_file $sliceconfig/config/etc/sudoers /etc/sudoers copy
+copy_file $sliceconfig/config/etc/sudoers /etc/sudoers
 
 # setup perms
 chmod 0440 /etc/sudoers

@@ -6,8 +6,8 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/ssh/sshd_config /etc/ssh/sshd_config copy
+# copy config
+copy_file $sliceconfig/config/etc/ssh/sshd_config /etc/ssh/sshd_config
 
 # modify sshd default config
 if [ $CONFIG_ALLOW_ROOT_LOGIN="yes" ]; then

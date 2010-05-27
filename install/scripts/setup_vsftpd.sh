@@ -10,13 +10,13 @@
 rm -rf /etc/vsftpd/*
 
 
-# link config
-copy_file $sliceconfig/config/etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf link
-copy_file $sliceconfig/config/etc/vsftpd/make_users_db.sh /etc/vsftpd/make_users_db.sh link
+# copy config
+copy_file $sliceconfig/config/etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf
+copy_file $sliceconfig/config/etc/vsftpd/make_users_db.sh /etc/vsftpd/make_users_db.sh
 
-copy_file $sliceconfig/config/etc/pam.d/vsftpd /etc/pam.d/vsftpd link
+copy_file $sliceconfig/config/etc/pam.d/vsftpd /etc/pam.d/vsftpd
 
-copy_file $sliceconfig/config/etc/vsftpd/users.txt /etc/vsftpd/users.txt copy
+copy_file $sliceconfig/config/etc/vsftpd/users.txt /etc/vsftpd/users.txt
 
 # setup passwd
 pass=`apg -n 1`

@@ -6,5 +6,5 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/motd /etc/motd link
+# copy config
+copy_file $sliceconfig/config/etc/motd /etc/motd

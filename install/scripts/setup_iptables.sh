@@ -6,9 +6,9 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/sysconfig/iptables /etc/sysconfig/iptables copy
-copy_file $sliceconfig/config/etc/sysconfig/iptables-config /etc/sysconfig/iptables-config link
+# copy config
+copy_file $sliceconfig/config/etc/sysconfig/iptables /etc/sysconfig/iptables
+copy_file $sliceconfig/config/etc/sysconfig/iptables-config /etc/sysconfig/iptables-config
 
 # configure service
 chkconfig iptables on

@@ -24,15 +24,15 @@ echo
 # add auth hosts
 mkdir /home/admin/.ssh
 
-copy_file $sliceconfig/config/home/admin/.ssh/authorized_keys /home/admin/.ssh/authorized_keys copy
+copy_file $sliceconfig/config/home/admin/.ssh/authorized_keys /home/admin/.ssh/authorized_keys
 
 # copy known hosts
-copy_file $sliceconfig/config/home/admin/.ssh/known_hosts /home/admin/.ssh/known_hosts copy
+copy_file $sliceconfig/config/home/admin/.ssh/known_hosts /home/admin/.ssh/known_hosts
 
 
 # copy keys
-copy_file $sliceconfig/config/home/admin/.ssh/id_rsa /home/admin/.ssh/id_rsa copy
-copy_file $sliceconfig/config/home/admin/.ssh/id_rsa.pub /home/admin/.ssh/id_rsa.pub copy
+copy_file $sliceconfig/config/home/admin/.ssh/id_rsa /home/admin/.ssh/id_rsa
+copy_file $sliceconfig/config/home/admin/.ssh/id_rsa.pub /home/admin/.ssh/id_rsa.pub
 copy_file $sliceconfig/config/home/admin/.bashrc /home/admin/.bashrc
 copy_file $sliceconfig/config/home/admin/.bash_profile /home/admin/.bash_profile
 copy_file $sliceconfig/config/home/admin/.tcshrc /home/admin/.tcshrc

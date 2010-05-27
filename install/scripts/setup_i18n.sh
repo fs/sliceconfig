@@ -6,8 +6,8 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/sysconfig/i18n /etc/sysconfig/i18n link
+# copy config
+copy_file $sliceconfig/config/etc/sysconfig/i18n /etc/sysconfig/i18n
 
 
 # setup locale

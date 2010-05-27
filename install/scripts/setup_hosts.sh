@@ -6,6 +6,6 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/hosts.allow /etc/hosts.allow link
-copy_file $sliceconfig/config/etc/hosts.deny /etc/hosts.deny link
+# copy config
+copy_file $sliceconfig/config/etc/hosts.allow /etc/hosts.allow
+copy_file $sliceconfig/config/etc/hosts.deny /etc/hosts.deny

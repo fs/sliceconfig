@@ -8,14 +8,14 @@
 
 # configure stub host
 mkdir /etc/nginx/vhosts
-copy_file $sliceconfig/config/etc/nginx/__0default.conf /etc/nginx/vhosts link
+copy_file $sliceconfig/config/etc/nginx/__0default.conf /etc/nginx/vhosts
 
-# link config
+# copy config
 ngconf="/etc/nginx/nginx.conf"
-copy_file $sliceconfig/config/etc/nginx/nginx_passenger.conf $ngconf link
+copy_file $sliceconfig/config/etc/nginx/nginx_passenger.conf $ngconf
 
 # create http auth
 
-copy_file $sliceconfig/config/etc/nginx/auth.conf /etc/nginx/auth.conf link
-copy_file $sliceconfig/config/etc/nginx/htpasswd /etc/nginx/htpasswd link
+copy_file $sliceconfig/config/etc/nginx/auth.conf /etc/nginx/auth.conf
+copy_file $sliceconfig/config/etc/nginx/htpasswd /etc/nginx/htpasswd
 

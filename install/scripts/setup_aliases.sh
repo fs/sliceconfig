@@ -6,7 +6,7 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/aliases /etc/aliases copy
+# copy config
+copy_file $sliceconfig/config/etc/aliases /etc/aliases
 
 newaliases

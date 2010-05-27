@@ -6,6 +6,6 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/yum/pluginconf.d/versionlock.conf /etc/yum/pluginconf.d/versionlock.conf link
-copy_file $sliceconfig/config/etc/yum/pluginconf.d/versionlock.list /etc/yum/pluginconf.d/versionlock.list link
+# copy config
+copy_file $sliceconfig/config/etc/yum/pluginconf.d/versionlock.conf /etc/yum/pluginconf.d/versionlock.conf
+copy_file $sliceconfig/config/etc/yum/pluginconf.d/versionlock.list /etc/yum/pluginconf.d/versionlock.list

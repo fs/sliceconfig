@@ -20,7 +20,7 @@ ssh-keygen -q -N '' -f /root/.ssh/id_rsa
 
 
 # copy known hosts
-copy_file $sliceconfig/config/root/.ssh/known_hosts /root/.ssh/known_hosts copy
+copy_file $sliceconfig/config/root/.ssh/known_hosts /root/.ssh/known_hosts
 
 
 # setup valid perms

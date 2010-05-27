@@ -9,9 +9,9 @@
 # create home dir and user
 useradd -m -d /var/lib/subversion -r -s /sbin/nologin svn
 
-# link config
-copy_file $sliceconfig/config/etc/init.d/svnserve /etc/init.d/svnserve link
-copy_file $sliceconfig/config/etc/sysconfig/subversion /etc/sysconfig/subversion link
+# copy config
+copy_file $sliceconfig/config/etc/init.d/svnserve /etc/init.d/svnserve
+copy_file $sliceconfig/config/etc/sysconfig/subversion /etc/sysconfig/subversion
 
 
 # iptables restart

@@ -6,9 +6,9 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
+# copy config
 svnserve_conf=svnserve.conf
-copy_file $sliceconfig/config/etc/monit.d/$svnserve_conf /etc/monit.d/$svnserve_conf link
+copy_file $sliceconfig/config/etc/monit.d/$svnserve_conf /etc/monit.d/$svnserve_conf
 
 
 # reload monit

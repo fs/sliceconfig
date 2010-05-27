@@ -6,13 +6,13 @@
 . `dirname $0`/configuration.sh
 
 
-# link plugins 
-copy_file $sliceconfig/config/etc/munin/plugins/nginx_status /etc/munin/plugins/nginx_status link
-copy_file $sliceconfig/config/etc/munin/plugins/nginx_request /etc/munin/plugins/nginx_requests link
+# copy plugins 
+copy_file $sliceconfig/config/etc/munin/plugins/nginx_status /etc/munin/plugins/nginx_status
+copy_file $sliceconfig/config/etc/munin/plugins/nginx_request /etc/munin/plugins/nginx_requests
 
 
-# link plugins conf
-copy_file $sliceconfig/config/etc/munin/plugin-conf.d/nginx /etc/munin/plugin-conf.d/nginx link
+# copy plugins conf
+copy_file $sliceconfig/config/etc/munin/plugin-conf.d/nginx /etc/munin/plugin-conf.d/nginx
 
 
 # restart service

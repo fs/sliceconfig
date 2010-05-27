@@ -10,8 +10,8 @@
 mkdir /etc/s3conf /etc/s3conf/certs
 
 
-# link config
-copy_file $sliceconfig/config/etc/s3conf/s3config.yml /etc/s3conf/s3config.yml link
+# copy config
+copy_file $sliceconfig/config/etc/s3conf/s3config.yml /etc/s3conf/s3config.yml
 
 
 # create s3 bucket for host
@@ -21,12 +21,12 @@ s3cmd createbucket $HOSTNAME
 cp -f $sliceconfig/config/etc/s3conf/certs/* /etc/s3conf/certs/
 
 
-# link sysconfig
-copy_file $sliceconfig/config/etc/sysconfig/s3sync /etc/sysconfig/s3sync link
+# copy sysconfig
+copy_file $sliceconfig/config/etc/sysconfig/s3sync /etc/sysconfig/s3sync
 
 
-# link script
-copy_file $sliceconfig/config/etc/cron.daily/0s3sync.sh /etc/cron.daily/0s3sync.sh link
+# copy script
+copy_file $sliceconfig/config/etc/cron.daily/0s3sync.sh /etc/cron.daily/0s3sync.sh
 
 
 # restart service

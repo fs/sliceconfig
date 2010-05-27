@@ -10,8 +10,8 @@
 mkdir -p /var/backups/mysql
 
 
-# link script
-copy_file $sliceconfig/config/etc/cron.daily/automysqlbackup.sh /etc/cron.daily/automysqlbackup.sh copy
+# copy script
+copy_file $sliceconfig/config/etc/cron.daily/automysqlbackup.sh /etc/cron.daily/automysqlbackup.sh
 
 # restart service
 service crond reload

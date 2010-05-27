@@ -6,8 +6,8 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/my.cnf /etc/my.cnf link
+# copy config
+copy_file $sliceconfig/config/etc/my.cnf /etc/my.cnf
 
 
 # configure service

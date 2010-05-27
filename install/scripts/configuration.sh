@@ -17,10 +17,9 @@ function copy_file()
 {
     src_file=$1
     dest_file=$2
-    flag=$3
     #check variables
-    if [[ (( $# -lt 3 || $flag != "copy" && $flag != "link" )) ]]; then
-	echo "Usage: copy_file source_file destination_file [copy|link]"
+    if [[ $# -lt 2  ]]; then
+	echo "Usage: copy_file source_file destination_file"
 	return 1;
     fi
     
@@ -44,17 +43,13 @@ function copy_file()
     fi
     
     #create file
-    if [ $flag = "copy" ];then
-	cp -f "$src_file" "$dest_file"
-	# replace variables
-	for x in ${variables[@]}; do
-	    variable=`echo $x|awk -F '=' '{print $1}'`
-	    value=`echo $x|awk -F '=' '{print $2}'`
-	    sed -i -e "s!$variable!$value!" $dest_file
-	done
-    elif [ $flag = "link" ]; then
-	ln -s "$src_file" "$dest_file"
-    fi
+    cp -f "$src_file" "$dest_file"
+    # replace variables
+    for x in ${variables[@]}; do
+        variable=`echo $x|awk -F '=' '{print $1}'`
+        value=`echo $x|awk -F '=' '{print $2}'`
+        sed -i -e "s!$variable!$value!" $dest_file
+    done
 }
 
 function get_value()

@@ -6,9 +6,9 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/monit.d/mysqld.conf /etc/monit.d/mysqld.conf link
-copy_file $sliceconfig/config/etc/monit.d/backup_mysql.conf /etc/monit.d/backup_mysql.conf link
+# copy config
+copy_file $sliceconfig/config/etc/monit.d/mysqld.conf /etc/monit.d/mysqld.conf
+copy_file $sliceconfig/config/etc/monit.d/backup_mysql.conf /etc/monit.d/backup_mysql.conf
 
 
 # reload monit

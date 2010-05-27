@@ -6,8 +6,8 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/monit.d/httpd.conf /etc/monit.d/httpd.conf link
+# copy config
+copy_file $sliceconfig/config/etc/monit.d/httpd.conf /etc/monit.d/httpd.conf
 
 
 # reload monit

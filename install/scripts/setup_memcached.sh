@@ -6,8 +6,8 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/sysconfig/memcached /etc/sysconfig/memcached link
+# copy config
+copy_file $sliceconfig/config/etc/sysconfig/memcached /etc/sysconfig/memcached
 
 
 # configure service

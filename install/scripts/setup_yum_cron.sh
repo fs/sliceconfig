@@ -6,7 +6,7 @@
 
 # configure service yum cron
 chkconfig yum-cron off
-copy_file $sliceconfig/config/etc/sysconfig/yum-cron /etc/sysconfig/yum-cron link
+copy_file $sliceconfig/config/etc/sysconfig/yum-cron /etc/sysconfig/yum-cron
 
 # start yum-cron
 service yum-cron start

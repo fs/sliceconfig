@@ -11,18 +11,18 @@ mkdir -p /var/backups/mirror
 mkdir -p /var/backups/files
 
 
-# link exclude
-copy_file $sliceconfig/config/etc/rdup.exclude.conf /etc/rdup.exclude.conf link
+# copy exclude
+copy_file $sliceconfig/config/etc/rdup.exclude.conf /etc/rdup.exclude.conf
 
 
-# link sysconfig
-copy_file $sliceconfig/config/etc/sysconfig/rdup /etc/sysconfig/rdup link
+# copy sysconfig
+copy_file $sliceconfig/config/etc/sysconfig/rdup /etc/sysconfig/rdup
 
 
-# link script
-copy_file $sliceconfig/config/etc/cron.hourly/rdup.sh /etc/cron.hourly/rdup.sh link
+# copy script
+copy_file $sliceconfig/config/etc/cron.hourly/rdup.sh /etc/cron.hourly/rdup.sh
 
-copy_file $sliceconfig/config/etc/logrotate.d/rdup /etc/logrotate.d/rdup link
+copy_file $sliceconfig/config/etc/logrotate.d/rdup /etc/logrotate.d/rdup
 
 # restart service
 service crond reload

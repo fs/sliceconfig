@@ -6,9 +6,9 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/monit.d/nginx.conf /etc/monit.d/nginx.conf link
-copy_file $sliceconfig/config/etc/init.d/nginx_fs /etc/init.d/nginx_fs copy
+# copy config
+copy_file $sliceconfig/config/etc/monit.d/nginx.conf /etc/monit.d/nginx.conf
+copy_file $sliceconfig/config/etc/init.d/nginx_fs /etc/init.d/nginx_fs
 
 # reload monit
 monit reload

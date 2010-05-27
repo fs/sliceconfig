@@ -8,5 +8,5 @@
 # create log dir
 mkdir /var/log/ssh
 
-# link config
-copy_file $sliceconfig/config/etc/profile.d/ssh_logger.sh /etc/profile.d/ssh_logger.sh link
+# copy config
+copy_file $sliceconfig/config/etc/profile.d/ssh_logger.sh /etc/profile.d/ssh_logger.sh

@@ -6,5 +6,5 @@
 . `dirname $0`/configuration.sh
 
 
-# symlink config
-copy_file $sliceconfig/config/etc/profile.d/ruby_enterprise_path.sh /etc/profile.d/ruby_enterprise_path.sh copy
+# copy config
+copy_file $sliceconfig/config/etc/profile.d/ruby_enterprise_path.sh /etc/profile.d/ruby_enterprise_path.sh

@@ -15,4 +15,4 @@ mkdir -p /var/www/rails /etc/rails/monit /etc/rails/mongrel_cluster
 
 # add rails logrotate
 mkdir -p /etc/logrotate.d
-copy_file $sliceconfig/config/etc/logrotate.d/rails /etc/logrotate.d/rails link
+copy_file $sliceconfig/config/etc/logrotate.d/rails /etc/logrotate.d/rails

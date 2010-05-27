@@ -6,5 +6,5 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/yum.repos.d/RubyWorks.repo /etc/yum.repos.d/RubyWorks.repo link
+# copy config
+copy_file $sliceconfig/config/etc/yum.repos.d/RubyWorks.repo /etc/yum.repos.d/RubyWorks.repo

@@ -6,6 +6,6 @@
 . `dirname $0`/configuration.sh
 
 
-# link config
-copy_file $sliceconfig/config/etc/logwatch/conf/logwatch.conf /etc/logwatch/conf/logwatch.conf link
+# copy config
+copy_file $sliceconfig/config/etc/logwatch/conf/logwatch.conf /etc/logwatch/conf/logwatch.conf
 mv /etc/cron.daily/0logwatch /etc/cron.weekly/
