@@ -12,9 +12,9 @@
 -A INPUT -p tcp --dport 21 -j ACCEPT
 -A INPUT -p tcp --dport 80 -j ACCEPT
 -A INPUT -p tcp --dport 443 -j ACCEPT
--A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 3306 -j ACCEPT
--A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 2049 -j ACCEPT
--A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 11211 -j ACCEPT
+#-A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 3306 -j ACCEPT
+#-A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 2049 -j ACCEPT
+#-A INPUT -p tcp -m iprange --src-range  172.16.0.0-172.23.255.254  --dport 11211 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW --dport CONFIG_SSH_PORT -j ACCEPT
 
 # munin-node

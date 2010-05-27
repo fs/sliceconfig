@@ -30,5 +30,4 @@ yum -y erase ruby.x86_64 ruby-libs.x86_64
 # copy ruby
 copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/ruby /usr/bin/ruby
 copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/gem /usr/bin/gem
-copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/s3cmd /usr/bin/s3cmd
-copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/s3sync /usr/bin/s3sync
+

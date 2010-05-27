@@ -13,6 +13,9 @@ mkdir /etc/s3conf /etc/s3conf/certs
 # copy config
 copy_file $sliceconfig/config/etc/s3conf/s3config.yml /etc/s3conf/s3config.yml
 
+#copy binaries to /usr/bin
+copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/s3cmd /usr/bin/s3cmd
+copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/s3sync /usr/bin/s3sync
 
 # create s3 bucket for host
 s3cmd createbucket $HOSTNAME
