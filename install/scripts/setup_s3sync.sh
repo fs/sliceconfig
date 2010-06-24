@@ -30,6 +30,7 @@ copy_file $sliceconfig/config/etc/sysconfig/s3sync /etc/sysconfig/s3sync
 
 # copy script
 copy_file $sliceconfig/config/etc/cron.daily/0s3sync.sh /etc/cron.daily/0s3sync.sh
+copy_file $sliceconfig/config/etc/cron.daily/s3-remove.sh /etc/cron.daily/s3-remove.sh
 
 
 # restart service
