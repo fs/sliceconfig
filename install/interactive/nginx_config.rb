@@ -48,9 +48,6 @@ server {
   # vhost specific access log
   access_log  /var/log/nginx/<%= project_name %>.<%= environment %>.access.log  main;
 
-  # slay down bots
-  include /etc/nginx/bots.conf;
-
   location / {
     # serve assets with timestamp directly with max expires header
     if ($request_uri ~* "\\.(ico|css|js|gif|jpe?g|png)\\?[0-9]+$") {
