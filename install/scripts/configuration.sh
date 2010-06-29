@@ -10,6 +10,7 @@ variables=(
     CONFIG_ROOT_ADDRESS="notify.root@flatsoft.com"
     # where stores private files
     CONFIG_PRIVATE="user@hostname:/path/to/config/file.tar.bz2"
+    CONFIG_PASSENGER_VERSION="2.2.7"
     )
 
 # various functions 
