@@ -25,7 +25,6 @@ sh $sliceconfig/install/scripts/erase_i386.sh
 
 # install required software
 sh $sliceconfig/install/scripts/install_perl.sh
-sh $sliceconfig/install/scripts/install_tools_yum.sh
 sh $sliceconfig/install/scripts/install_sendmail.sh
 sh $sliceconfig/install/scripts/install_security_base.sh
 sh $sliceconfig/install/scripts/install_tools_editors.sh
@@ -60,8 +59,6 @@ sh $sliceconfig/install/scripts/setup_ruby_enterprise_path.sh
 #sh $sliceconfig/install/scripts/setup_ssh_logger.sh
 sh $sliceconfig/install/scripts/setup_iptables.sh
 sh $sliceconfig/install/scripts/setup_sudo.sh
-sh $sliceconfig/install/scripts/setup_yum_cron.sh
-sh $sliceconfig/install/scripts/setup_yum_versionlock.sh
 sh $sliceconfig/install/scripts/setup_sendmail.sh
 sh $sliceconfig/install/scripts/setup_vsftpd.sh
 sh $sliceconfig/install/scripts/setup_rkhunter.sh
