@@ -11,7 +11,7 @@ useradd -r -d /var/www/rails rails
 usermod -G admin,rails,wheel admin
 
 # add rails dirs
-mkdir -p /var/www/rails /etc/rails/monit /etc/rails/mongrel_cluster
+mkdir -p /var/www/rails /etc/rails/monit
 
 # add rails logrotate
 mkdir -p /etc/logrotate.d
