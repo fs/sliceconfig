@@ -14,10 +14,10 @@ yum -y -d1 install zlib-devel.x86_64 openssl-devel.x86_64 readline-devel.x86_64
 
 
 # install ruby ent
-tar xzf $sliceconfig/install/files/ruby-enterprise-1.8.7-2009.10.tar.gz -C /tmp
-cd /tmp/ruby-enterprise-1.8.7-2009.10
-sh ./installer --auto /opt/ruby-enterprise-1.8.7-2009.10
-rm -rf /tmp/ruby-enterprise-1.8.7-2009.10
+tar xzf $sliceconfig/install/files/ruby-enterprise-1.8.7-2010.02.tar.gz -C /tmp
+cd /tmp/ruby-enterprise-1.8.7-2010.02
+sh ./installer --auto /opt/ruby-enterprise-1.8.7-2010.02
+rm -rf /tmp/ruby-enterprise-1.8.7-2010.02
 
 # erase ruby
 yum -y erase ruby.x86_64 ruby-libs.x86_64
@@ -28,6 +28,6 @@ yum -y erase ruby.x86_64 ruby-libs.x86_64
 
 
 # copy ruby
-copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/ruby /usr/bin/ruby
-copy_file /opt/ruby-enterprise-1.8.7-2009.10/bin/gem /usr/bin/gem
+copy_file /opt/ruby-enterprise-1.8.7-2010.02/bin/ruby /usr/bin/ruby
+copy_file /opt/ruby-enterprise-1.8.7-2010.02/bin/gem /usr/bin/gem
 

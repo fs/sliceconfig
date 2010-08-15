@@ -6,5 +6,5 @@
 . `dirname $0`/configuration.sh
 
 gem install --ignore-dependencies --no-rdoc --no-ri --no-update-sources -q passenger --version=`get_value 'CONFIG_PASSENGER_VERSION'`
-ln -s /opt/ruby-enterprise-1.8.7-2009.10/ /opt/ree
+ln -s /opt/ruby-enterprise-1.8.7-2010.02/ /opt/ree
 /opt/ree/bin/passenger-install-apache2-module
