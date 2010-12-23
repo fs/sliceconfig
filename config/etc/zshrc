@@ -1,7 +1,4 @@
-##############################
-# My super awesome zshrc.    #
-##############################
-
+#
 # Environment and shell options.
 #
 
@@ -29,7 +26,6 @@ alias ll='ls -lh'
 alias la='ls -a'
 alias l='ls'
 alias wtf="whatis"
-alias pacman="pacman-color"
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
@@ -129,8 +125,7 @@ local blue_op=""$PR_BLUE"["$PR_NO_COLOUR""
 local blue_cp=""$PR_BLUE"]"$PR_NO_COLOUR""
 local path_p="${blue_op}$PR_MAGENTA%/$PR_NO_COLOUR${blue_cp}%b"
 local user_host="${blue_op}%B$PR_GREEN%n@%m$PR_NO_COLOUR${blue_cp}"
-PROMPT="${user_host}-${path_p}
-$PR_BLUE%#$PR_NO_COLOUR "
+PROMPT="${user_host}-${path_p}$PR_BLUE%#$PR_NO_COLOUR"
 RPROMPT="%B%*%b"
 
 unset color
