@@ -54,7 +54,6 @@ sh $sliceconfig/install/scripts/setup_hosts.sh
 sh $sliceconfig/install/scripts/setup_aliases.sh
 sh $sliceconfig/install/scripts/setup_crond.sh
 sh $sliceconfig/install/scripts/setup_ssh.sh
-sh $sliceconfig/install/scripts/setup_logwatch.sh
 sh $sliceconfig/install/scripts/setup_ruby_enterprise_path.sh
 #sh $sliceconfig/install/scripts/setup_ssh_logger.sh
 sh $sliceconfig/install/scripts/setup_iptables.sh
