@@ -13,7 +13,9 @@ copy_file $sliceconfig/config/etc/nginx/__0default.conf /etc/nginx/vhosts
 # copy config
 ngconf="/etc/nginx/nginx.conf"
 copy_file $sliceconfig/config/etc/nginx/nginx.conf $ngconf
-
+# set worker_connections to cpu number
+core_count=$( grep 'processor' /proc/cpuinfo | uniq | wc -l )
+sed -i -e "s/core_count/$core_count/" $sliceconfig/config/etc/nginx/nginx.conf $ngconf
 # create http auth
 
 copy_file $sliceconfig/config/etc/nginx/auth.conf /etc/nginx/auth.conf

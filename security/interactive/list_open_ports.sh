@@ -2,5 +2,5 @@
 # All rights reserved
 
 
-# look at what is listening on what port
-netstat -nl | grep -i tcp
+# look at what is listening on what tcp and udp port, sockets witch pid/programm name
+netstat -lnp
