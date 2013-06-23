@@ -20,7 +20,10 @@
 # munin-node
 -A INPUT -p tcp --dport 4949 --source munin.flatsoft.com -j ACCEPT
 
--A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type echo-request -j ACCEPT
+-A INPUT -p icmp --icmp-type destination-unreachable -j ACCEPT
+-A INPUT -p icmp --icmp-type source-quench -j ACCEPT
+-A INPUT -p icmp --icmp-type time-exceeded -j ACCEPT
 
 -A INPUT -j REJECT
 
